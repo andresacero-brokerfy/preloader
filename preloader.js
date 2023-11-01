@@ -28,5 +28,19 @@ svgImage.style.cssText = `
 `;
 
 // Append the elements to the body
-// document.body.appendChild(overlay); // Overlay no añadido
+document.body.appendChild(overlay);
 document.body.appendChild(svgImage);
+
+// Function to hide the overlay and display the SVG
+function hideOverlay() {
+    overlay.style.display = 'none';
+}
+
+// Add an event listener to hide the overlay when all external JS files are loaded
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(hideOverlay, 100); // Oculta el overlay después de 100ms
+});
+
+// Fallback: If all external resources are loaded and the DOMContentLoaded event doesn't fire,
+// we'll still hide the overlay when the window's load event is triggered.
+window.addEventListener('load', hideOverlay);
