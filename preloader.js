@@ -16,11 +16,11 @@ overlay.style.cssText = `
 
 const svgImage = document.createElement('img');
 svgImage.id = 'svgImage';
-svgImage.src = 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/brokerfy-6basla/assets/7uqwgzglvinf/logo-new-brokerfy.svg';
+svgImage.src = 'https://cdn.jsdelivr.net/gh/andresacero-brokerfy/preloader/logo-new-brokerfy.svg'; // URL de tu SVG en jsDelivr
 svgImage.style.cssText = `
     max-width: 100%;
     max-height: 100%;
-    display: none;
+    display: block; // Se muestra de inmediato
     position: absolute;
     top: 50%;
     left: 50%;
@@ -30,18 +30,3 @@ svgImage.style.cssText = `
 // Append the elements to the body
 document.body.appendChild(overlay);
 document.body.appendChild(svgImage);
-
-// Function to hide the overlay and display the SVG
-function hideOverlay() {
-    overlay.style.display = 'none';
-    svgImage.style.display = 'block';
-}
-
-// Add an event listener to hide the overlay when all external JS files are loaded
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(hideOverlay, 100);
-});
-
-// Fallback: If all external resources are loaded and the DOMContentLoaded event doesn't fire,
-// we'll still hide the overlay when the window's load event is triggered.
-window.addEventListener('load', hideOverlay);
