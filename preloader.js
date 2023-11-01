@@ -10,17 +10,17 @@ overlay.style.cssText = `
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0); // Overlay transparente
     z-index: 999;
 `;
 
 const svgImage = document.createElement('img');
 svgImage.id = 'svgImage';
-svgImage.src = 'https://cdn.jsdelivr.net/gh/andresacero-brokerfy/preloader/logo-new-brokerfy.svg'; // URL de tu SVG en jsDelivr
+svgImage.src = 'https://cdn.jsdelivr.net/gh/andresacero-brokerfy/preloader/logo-new-brokerfy.svg';
 svgImage.style.cssText = `
-    max-width: 100%;
-    max-height: 100%;
-    display: block; // Se muestra de inmediato
+    width: 150px; // Tamaño ajustado
+    height: auto;
+    display: block;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -28,5 +28,5 @@ svgImage.style.cssText = `
 `;
 
 // Append the elements to the body
-document.body.appendChild(overlay);
+// document.body.appendChild(overlay); // Overlay no añadido
 document.body.appendChild(svgImage);
