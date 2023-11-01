@@ -18,15 +18,14 @@ const svgImage = document.createElement('img');
 svgImage.id = 'svgImage';
 svgImage.src = 'https://cdn.jsdelivr.net/gh/andresacero-brokerfy/preloader/logo-new-brokerfy.svg';
 svgImage.style.cssText = `
-    max-width: 50%;
-    max-height: 50%;
+    width: 120px;  // Ancho fijo de 120px
+    height: auto;  // Alto se ajusta automáticamente
     display: none;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 `;
-svgImage.style.display = 'none';
 
 // Append the elements to the body
 document.body.appendChild(overlay);
@@ -40,9 +39,7 @@ function hideOverlay() {
 
 // Add an event listener to hide the overlay when all external JS files are loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Replace the following lines with the actual code that loads your external JS files
-    // For demonstration purposes, we'll use a setTimeout to simulate loading external JS files.
-    setTimeout(hideOverlay, 100); // Replace with your actual loading code.
+    setTimeout(hideOverlay, 100);
 });
 
 // Fallback: If all external resources are loaded and the DOMContentLoaded event doesn't fire,
