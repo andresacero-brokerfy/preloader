@@ -18,7 +18,7 @@ const svgImage = document.createElement('img');
 svgImage.id = 'svgImage';
 svgImage.src = 'https://cdn.jsdelivr.net/gh/andresacero-brokerfy/preloader@182060a494f02f7b03a055c3208c9e042dfd2039/door_combined.svg';
 svgImage.style.cssText = `
-    width: 120px;  // Ancho fijo de 120px
+    width: 160px;  // Ancho fijo de 160px
     height: auto;  // Alto se ajusta automáticamente
     display: none;
     position: absolute;
